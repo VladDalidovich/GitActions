@@ -1,37 +1,33 @@
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
-nupkg/
+# Common IntelliJ Platform excludes
 
-# Visual Studio Code
-.vscode
+# User specific
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/shelf/*
+**/.idea/dictionaries
+
+# Sensitive or high-churn files
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.xml
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
 
 # Rider
-.idea
+# Rider auto-generates .iml files, and contentModel.xml
+**/.idea/**/*.iml
+**/.idea/**/contentModel.xml
+**/.idea/**/modules.xml
 
-# User-specific files
 *.suo
 *.user
-*.userosscache
-*.sln.docstates
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
+.vs/
 [Bb]in/
 [Oo]bj/
-[Oo]ut/
-msbuild.log
-msbuild.err
-msbuild.wrn
+_UpgradeReport_Files/
+[Pp]ackages/
 
-# Visual Studio 2015
-.vs/
+Thumbs.db
+Desktop.ini
+.DS_Store
