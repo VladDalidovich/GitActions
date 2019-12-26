@@ -1,4 +1,6 @@
 ﻿using System;
+using GitActions.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GitActions
 {
@@ -6,16 +8,19 @@ namespace GitActions
     {
         static void Main(string[] args)
         {
+            var service = GetService();
+            
             var message = "Hello World!";
-            var isHelloMess =  IsHelloWorldMessage(message);
+            var isHelloMess =  service.IsHelloWorldMessage(message);
             Console.WriteLine($"{message} - {isHelloMess}");
         }
 
-        private static bool IsHelloWorldMessage(string message)
+        static Service GetService()
         {
-            if (message == "Hello World!")
-                return true;
-            return false;
+            var serviceProvider = new ServiceCollection()
+                .AddScoped<Service>();
+            var service = serviceProvider.BuildServiceProvider();
+            return service.GetService<Service>();
         }
     }
 }
